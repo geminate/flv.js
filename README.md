@@ -1,3 +1,5 @@
+## 定制化调整
+/src/io/fetch-stream-loader.js: 使用 AbortController 终止 fecth 请求
 
 flv.js  [![npm](https://img.shields.io/npm/v/flv.js.svg?style=flat)](https://www.npmjs.com/package/flv.js)
 ======

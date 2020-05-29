@@ -1,5 +1,5 @@
 {
-  "name": "flv.js",
+  "name": "@geminate/flv.js",
   "version": "1.5.0",
   "description": "HTML5 FLV Player",
   "main": "./dist/flv.js",
@@ -8,7 +8,7 @@
   "types": "./d.ts/flv.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bilibili/flv.js"
+    "url": "https://github.com/geminate/flv.js"
   },
   "keywords": [
     "html5",
