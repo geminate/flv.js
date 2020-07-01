@@ -77,6 +77,8 @@ class MSEController {
             audio: []
         };
         this._idrList = new IDRSampleList();
+
+        this.tempSourceBuffer = []
     }
 
     destroy() {
@@ -442,10 +444,13 @@ class MSEController {
                 }
 
                 try {
-                    this._sourceBuffers[type].appendBuffer(segment.data);
-                    this._isBufferFull = false;
-                    if (type === 'video' && segment.hasOwnProperty('info')) {
+                    this.tempSourceBuffer.push(segment.data)
+                    if(!this._mediaElement.paused){
+                      this._sourceBuffers[type].appendBuffer(this.tempSourceBuffer.shift());
+                      this._isBufferFull = false;
+                      if (type === 'video' && segment.hasOwnProperty('info')) {
                         this._idrList.appendArray(segment.info.syncPoints);
+                      }
                     }
                 } catch (error) {
                     this._pendingSegments[type].unshift(segment);
